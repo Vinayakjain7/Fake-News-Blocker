@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Blocker</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 40px; }
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        h2 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fake News Blocker</h1>
+        <p>Paste any news text below to check if it's real or fake.</p>
+
+        <form method="POST">
+            <textarea name="news_text" placeholder="Paste news article text here..."></textarea>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <h2>Prediction: {{ result }}</h2>
+        {% endif %}
+    </div>
+
+</body>
+</html>
